@@ -635,7 +635,7 @@ img {
 }
 .partner-strip {
   position: relative;
-  margin: 54px calc((var(--container-width) - 100vw) / 2) 0;
+  margin: 54px calc((min(var(--container-width), 100vw) - 100vw) / 2) 0;
   overflow: hidden;
   padding: 18px max(22px, calc((100vw - var(--container-width)) / 2));
 }
@@ -1048,8 +1048,8 @@ img {
     min-height: 155px;
   }
   .partner-strip {
-    margin-right: calc((var(--container-width) - 100vw) / 2);
-    margin-left: calc((var(--container-width) - 100vw) / 2);
+    margin-right: calc((100% - 100vw) / 2);
+    margin-left: calc((100% - 100vw) / 2);
   }
   .partner-logos {
     grid-template-columns: repeat(6, minmax(60px, 1fr));
@@ -1239,6 +1239,7 @@ img {
   .hero {
     min-height: auto;
     padding: 125px 0 76px;
+    background-attachment: scroll;
   }
   .hero-inner {
     display: flex;
